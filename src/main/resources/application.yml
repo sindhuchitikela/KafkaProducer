@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      bindings:
+        output:
+          destination: test-topic
+          content-type: text/plain            
+        input:
+          destination: test-topic
+          content-type: text/plain
+          consumer:
+            headerMode: raw
+            concurrency: 3
